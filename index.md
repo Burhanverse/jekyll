@@ -1,5 +1,5 @@
 ---
-title: My page
+title: Burhanverse
 layout: default
 ---
 
