@@ -1,41 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var dataRotate = document.querySelector(".typing-text").getAttribute("data-rotate");
-  var periods = JSON.parse(dataRotate);
-  var element = document.querySelector(".typing-text");
-  var toRotate = periods.slice(0);
-  var loopNum = 0;
-  var isDeleting = false;
-  var txt = "";
+  const typingTextElement = document.querySelector(".typing-text");
+  const texts = JSON.parse(typingTextElement.getAttribute("data-rotate"));
+  const initialDelay = 1000; // Delay before starting to type
+  const typeSpeed = 150; // Speed of typing (lower value means faster typing)
+  const deleteSpeed = 50; // Speed of deleting (lower value means faster deleting)
+  const pauseBetweenTexts = 2000; // Pause between texts
 
-  function tick() {
-    var i = loopNum % toRotate.length;
-    var fullTxt = toRotate[i];
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentText = texts[textIndex];
+    const typedText = currentText.substring(0, charIndex);
+    typingTextElement.textContent = typedText;
 
     if (isDeleting) {
-      txt = fullTxt.substring(0, txt.length - 1);
+      charIndex--;
     } else {
-      txt = fullTxt.substring(0, txt.length + 1);
+      charIndex++;
     }
 
-    element.textContent = txt;
-
-    var delta = 200 - Math.random() * 100;
-
-    if (isDeleting) {
-      delta /= 2;
-    }
-
-    if (!isDeleting && txt === fullTxt) {
-      delta = 2000; // Pause at the end of typing
-      isDeleting = true;
-    } else if (isDeleting && txt === "") {
+    if (isDeleting && charIndex === 0) {
       isDeleting = false;
-      loopNum++;
-      delta = 500; // Pause before starting to type again
+      textIndex = (textIndex + 1) % texts.length;
+    } else if (!isDeleting && charIndex === currentText.length) {
+      isDeleting = true;
+      setTimeout(type, pauseBetweenTexts);
+      return;
     }
 
-    setTimeout(tick, delta);
+    const speed = isDeleting ? deleteSpeed : typeSpeed;
+    setTimeout(type, speed);
   }
 
-  tick();
+  setTimeout(type, initialDelay);
 });

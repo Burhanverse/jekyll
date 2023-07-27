@@ -1,11 +1,21 @@
-    <section
-      id="hero"
-      class="d-flex flex-column justify-content-center align-items-center">
- <!-- Typing text element -->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Your other head content goes here -->
+</head>
+<body>
+  <!-- Your other body content goes here -->
+
+  <!-- Typing text element -->
   <div class="hero-container" data-aos="fade-in">
     <h1>Hi, I'm
       <span class="highlight-title">{{site.username}}</span>,
     </h1>
-    <span class="typing-text" data-rotate='{{ site.typing_text | jsonify }}'></span>
+    <span class="typing-text" data-rotate='["{{site.typing_text | join: '", "'}}"]'></span>
   </div>
-      </section>
+
+  <!-- Link to the JavaScript file -->
+  <script src="/assets/js/typing-effect.js"></script>
+
+</body>
+</html>
