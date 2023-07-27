@@ -3,7 +3,7 @@ title: Releases
 layout: default
 ---
 
-# {{ page.title }}
+# 
 
 ### Build Information
 
