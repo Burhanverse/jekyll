@@ -1,6 +1,14 @@
 /**
 * Author: Burhan
 * Updated: July 2,2023
+
+/* Your CSS file */
+.highlight-title {
+  color: red; /* Example style, you can customize it as you like */
+  font-weight: bold;
+  /* Add more styles here as needed */
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/

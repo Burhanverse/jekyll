@@ -3,5 +3,5 @@
     <h1>Hi, I'm
       <span class="highlight-title">{{site.username}}</span>,
     </h1>
-    <span class="typing-text" data-rotate='["{{site.typing_text}}", "Student, Weeb, Photographer, Developer"]'></span>
+    <span class="typing-text" data-rotate='{{ site.typing_text | jsonify }}'></span>
   </div>
