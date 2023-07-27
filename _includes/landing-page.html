@@ -1,7 +1,11 @@
-<!-- Typing text element -->
+    <section
+      id="hero"
+      class="d-flex flex-column justify-content-center align-items-center">
+ <!-- Typing text element -->
   <div class="hero-container" data-aos="fade-in">
     <h1>Hi, I'm
       <span class="highlight-title">{{site.username}}</span>,
     </h1>
     <span class="typing-text" data-rotate='{{ site.typing_text | jsonify }}'></span>
   </div>
+      </section>

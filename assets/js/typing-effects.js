@@ -1,10 +1,8 @@
-// typing-effect.js
-document.addEventListener("DOMContentLoaded", function() {
-  var dataRotate = document.getElementById("txt-rotate").getAttribute("data-rotate");
+document.addEventListener("DOMContentLoaded", function () {
+  var dataRotate = document.querySelector(".typing-text").getAttribute("data-rotate");
   var periods = JSON.parse(dataRotate);
-  var element = document.getElementById("txt-rotate");
+  var element = document.querySelector(".typing-text");
   var toRotate = periods.slice(0);
-  var period = parseInt(element.getAttribute("data-period"), 10);
   var loopNum = 0;
   var isDeleting = false;
   var txt = "";
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
       txt = fullTxt.substring(0, txt.length + 1);
     }
 
-    element.innerHTML = '<span class="wrap">' + txt + "</span>";
+    element.textContent = txt;
 
     var delta = 200 - Math.random() * 100;
 
@@ -28,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (!isDeleting && txt === fullTxt) {
-      delta = period;
+      delta = 2000; // Pause at the end of typing
       isDeleting = true;
     } else if (isDeleting && txt === "") {
       isDeleting = false;
       loopNum++;
-      delta = 500;
+      delta = 500; // Pause before starting to type again
     }
 
     setTimeout(tick, delta);
