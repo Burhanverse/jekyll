@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aqua Ai</title>   
+    <meta name="description" content="Aqua Ai swims as a savvy chatbot, built on the foundation of ChatGPT, that customizes itself to cater to your every whim. Utilizing cutting-edge machine learning algorithms, Aqua Ai zips through the depths of data to provide swift and precise replies, imbuing each exchange with a one-of-a-kind character and tailor-made feel.">	    
+    <meta charset="UTF-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />    
+    <link rel="shortcut icon" type="image/x-icon" href="../aqua/favicon.png">    
+            <link href="../assets/css/aquaai.css" rel="stylesheet" />
+    
+    <!-- iframe-->
+    <script>
+        function resizeIframe() {
+            var iframe = document.getElementById("iframe");
+            iframe.style.width = window.innerWidth + "px";
+            iframe.style.height = window.innerHeight + "px";
+        }
+        window.onresize = resizeIframe;
+    </script>
+</head>
+
+<!--bot src-->
+<body onload="resizeIframe()">
+    <main>
+        <iframe id="iframe"
+        src="https://ora.ai/embed/326d5a49-2c81-4845-9d42-6f4fe79e77c2"
+        </iframe>
+    </main>
+</body>
+
+</html>
