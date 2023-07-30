@@ -230,13 +230,14 @@ h6 {
 
 .landing-title {
   position: relative;
+  text-align: center;
   z-index: 2;
   min-width: 300px;
 }
 
 .highlight-title {
-  color: #ff073a;
-  text-shadow: 0.25rem 0.25rem 0.25rem #ff073a;
+  color: #910b25;
+  text-shadow: 0.25rem 0.25rem 0.25rem #8f05206e;
 }
 
 #hero h1 {
