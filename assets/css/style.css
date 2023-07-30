@@ -2,16 +2,32 @@
 * Author: Burhan
 * Updated: July 2,2023
 
-/* Your CSS file */
-.highlight-title {
-  color: red; /* Example style, you can customize it as you like */
-  font-weight: bold;
-  /* Add more styles here as needed */
-}
+
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+/* Variables */
+
+$small-screen: 48em !default;
+$medium-screen: 62em !default;
+$large-screen: 75em !default;
+$font-family: "Raleway", sans-serif;
+$font-family-numbers: "Josefin Sans", sans-serif;
+$font-size-base: 1rem !default;
+$font-size-h1: 2rem !default;
+$font-weight-strong: 600;
+$text-color: #fff !default;
+$bg-color: rgba(43, 45, 47, 1);
+$card-bg-color: linear-gradient(
+  145deg,
+  rgba(115, 115, 115, 0.15) 15%,
+  rgba(43, 45, 47, 1) 80%
+);
+$primary-color: #ff073a;
+
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -230,6 +246,11 @@ h6 {
   position: relative;
   z-index: 2;
   min-width: 300px;
+}
+
+.highlight-title {
+  color: $primary-color;
+  text-shadow: 0.25rem 0.25rem 0.25rem $primary-color;
 }
 
 #hero h1 {
