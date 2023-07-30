@@ -7,24 +7,6 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-/* Variables */
-
-$small-screen: 48em !default;
-$medium-screen: 62em !default;
-$large-screen: 75em !default;
-$font-family: "Raleway", sans-serif;
-$font-family-numbers: "Josefin Sans", sans-serif;
-$font-size-base: 1rem !default;
-$font-size-h1: 2rem !default;
-$font-weight-strong: 600;
-$text-color: #fff !default;
-$bg-color: rgba(43, 45, 47, 1);
-$card-bg-color: linear-gradient(
-  145deg,
-  rgba(115, 115, 115, 0.15) 15%,
-  rgba(43, 45, 47, 1) 80%
-);
-$primary-color: #ff073a;
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -247,12 +229,9 @@ h6 {
 }
 
 .landing-title {
-  left: 0;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  position: absolute;
-  right: 0;
-  top: 40%;
+  position: relative;
+  z-index: 2;
+  min-width: 300px;
 }
 
 .highlight-title {
